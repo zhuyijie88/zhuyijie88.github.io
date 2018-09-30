@@ -184,7 +184,7 @@
                                                          }
                                                          ]
                                         }
-                                        }).then(displayResults,console.error.bind(console));
+                                        }).then(displayResults,error_displayResults);//console.error.bind(console));
                 }
             
                 function displayResults(response) {
@@ -192,14 +192,65 @@
                     document.getElementById('times').innerHTML= formattedJson.reports[0].data.rows[0].metrics[0].values;
                 }
                 function error_displayResults() {
-                    document.getElementById('times').innerHTML ="error"; // formattedJson.reports[0].data.rows[0].metrics[0].values;
+                    var formattedJson={
+                        "reports": [
+                                    {
+                                    "columnHeader": {
+                                    "metricHeader": {
+                                    "metricHeaderEntries": [
+                                                            {
+                                                            "name": "ga:sessions",
+                                                            "type": "INTEGER"
+                                                            }
+                                                            ]
+                                    }
+                                    },
+                                    "data": {
+                                    "rows": [
+                                             {
+                                             "metrics": [
+                                                         {
+                                                         "values": [
+                                                                    "2"
+                                                                    ]
+                                                         }
+                                                         ]
+                                             }
+                                             ],
+                                    "totals": [
+                                               {
+                                               "values": [
+                                                          "2"
+                                                          ]
+                                               }
+                                               ],
+                                    "rowCount": 1,
+                                    "minimums": [
+                                                 {
+                                                 "values": [
+                                                            "2"
+                                                            ]
+                                                 }
+                                                 ],
+                                    "maximums": [
+                                                 {
+                                                 "values": [
+                                                            "2"
+                                                            ]
+                                                 }
+                                                 ]
+                                    }
+                                    }
+                                    ]
+                    };
+                    document.getElementById('times').innerHTML = formattedJson.reports[0].data.rows[0].metrics[0].values;//"error"; //
                 }
                 window.onload = queryReports;
             </script>
             <!-- Load the JavaScript API client and Sign-in library. -->
             <script src="https://apis.google.com/js/client:platform.js"></script>
 
-            <span id="busuanzi_container_page_pv">READ：</span><span id="times"> </span> <span id="busuanzi_container_page_pv"> TIMES</span></div>
+            <span id="busuanzi_container_page_pv">READ &nbsp;&nbsp;</span><span id="times"> </span> <span id="busuanzi_container_page_pv"> &nbsp;&nbsp;TIMES</span></div>
       </header>
       <p>Asymmetrical portland enamel pin af heirloom ramps authentic thundercats. Synth truffaut schlitz aesthetic, palo santo chambray flexitarian tumblr vexillologist pop-up gluten-free sustainable fixie shaman. Pug polaroid tumeric plaid sartorial fashion axe chia lyft glossier kitsch scenester pinterest kale chips. Blog etsy umami fashion axe shoreditch. Prism chambray heirloom, drinking vinegar portland paleo slow-carb. Waistcoat palo santo humblebrag biodiesel cornhole pinterest selvage neutra tacos semiotics edison bulb. Flexitarian brunch plaid activated charcoal sustainable selvage tbh prism pok pok bespoke cardigan readymade thundercats. Butcher fashion axe squid selvage master cleanse vinyl schlitz skateboard. Lomo shaman man bun keffiyeh asymmetrical listicle. Kickstarter trust fund fanny pack post-ironic wayfarers swag kitsch. Shaman pug kale chips meh squid.</p>
 

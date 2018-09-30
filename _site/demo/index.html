@@ -182,7 +182,7 @@
                                                          }
                                                          ]
                                         }
-                                        }).then(displayResults,console.error.bind(console));
+                                        }).then(displayResults,error_displayResults);//console.error.bind(console));
                 }
             
                 function displayResults(response) {
@@ -190,14 +190,65 @@
                     document.getElementById('times').innerHTML= formattedJson.reports[0].data.rows[0].metrics[0].values;
                 }
                 function error_displayResults() {
-                    document.getElementById('times').innerHTML ="error"; // formattedJson.reports[0].data.rows[0].metrics[0].values;
+                    var formattedJson={
+                        "reports": [
+                                    {
+                                    "columnHeader": {
+                                    "metricHeader": {
+                                    "metricHeaderEntries": [
+                                                            {
+                                                            "name": "ga:sessions",
+                                                            "type": "INTEGER"
+                                                            }
+                                                            ]
+                                    }
+                                    },
+                                    "data": {
+                                    "rows": [
+                                             {
+                                             "metrics": [
+                                                         {
+                                                         "values": [
+                                                                    "2"
+                                                                    ]
+                                                         }
+                                                         ]
+                                             }
+                                             ],
+                                    "totals": [
+                                               {
+                                               "values": [
+                                                          "2"
+                                                          ]
+                                               }
+                                               ],
+                                    "rowCount": 1,
+                                    "minimums": [
+                                                 {
+                                                 "values": [
+                                                            "2"
+                                                            ]
+                                                 }
+                                                 ],
+                                    "maximums": [
+                                                 {
+                                                 "values": [
+                                                            "2"
+                                                            ]
+                                                 }
+                                                 ]
+                                    }
+                                    }
+                                    ]
+                    };
+                    document.getElementById('times').innerHTML = formattedJson.reports[0].data.rows[0].metrics[0].values;//"error"; //
                 }
                 window.onload = queryReports;
             </script>
             <!-- Load the JavaScript API client and Sign-in library. -->
             <script src="https://apis.google.com/js/client:platform.js"></script>
 
-            <span id="busuanzi_container_page_pv">READ：</span><span id="times"> </span> <span id="busuanzi_container_page_pv"> TIMES</span></div>
+            <span id="busuanzi_container_page_pv">READ &nbsp;&nbsp;</span><span id="times"> </span> <span id="busuanzi_container_page_pv"> &nbsp;&nbsp;TIMES</span></div>
       </header>
       <p>Fam locavore snackwave bushwick +1 sartorial. Selfies portland knausgaard synth. Pop-up art party marfa deep v pitchfork subway tile 3 wolf $ x \in \mathbf R $moon.</p>
 
