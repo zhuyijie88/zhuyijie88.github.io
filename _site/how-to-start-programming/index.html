@@ -149,17 +149,16 @@
         <div class="page-date"><span>2017, Sep 12&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <!--        <script async src="/ga.js"></script>-->
 <!--        <script src="//www.google-analytics.com/cx/api.js"></script>-->
-
+            <head>
             <meta name="google-signin-client_id" content="345592105754-dspq32qjv8kvrhbk06cfdmdng3q8khni.apps.googleusercontent.com">
             <meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly">
+            </head>
                 <!-- The Sign-in button. This will run `queryReports()` on success. -->
-        
 <!--            <p class="g-signin2" data-onsuccess="queryReports"></p>-->
 <!--            <button type="button" onclick="myFunction()">Try it</button>-->
             <script>
                 // Replace with your view ID.
                 var VIEW_ID = '182644519';
-            
                 // Query the API and print the results to the page.
                 
                 function queryReports() {
@@ -185,7 +184,7 @@
                                                          }
                                                          ]
                                         }
-                                        }).then(displayResults,error_displayResults); //console.error.bind(console));
+                                        }).then(displayResults,console.error.bind(console));
                 }
             
                 function displayResults(response) {
@@ -193,7 +192,6 @@
                     document.getElementById('times').innerHTML= formattedJson.reports[0].data.rows[0].metrics[0].values;
                 }
                 function error_displayResults() {
-                    //var formattedJson = JSON.stringify(response.result, null, 2);
                     document.getElementById('times').innerHTML ="error"; // formattedJson.reports[0].data.rows[0].metrics[0].values;
                 }
                 window.onload = queryReports;
