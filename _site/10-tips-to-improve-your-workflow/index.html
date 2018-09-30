@@ -147,7 +147,52 @@
       <header class="header-page">
         <h1 class="page-title">10 Tips To Improve Your Workflow</h1>
         <div class="page-date"><span>2017, Sep 12&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <span id="busuanzi_container_page_pv">READ：10 Tips To Improve Your Workflow TIMES</span></div>
+<!--        <script async src="/ga.js"></script>-->
+<!--        <script src="//www.google-analytics.com/cx/api.js"></script>-->
+            <meta name="google-signin-client_id" content="345592105754-dspq32qjv8kvrhbk06cfdmdng3q8khni.apps.googleusercontent.com">
+            <meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly">
+            <script>
+                // Replace with your view ID.
+                var VIEW_ID = '182644519';
+                
+                // Query the API and print the results to the page.
+                function queryReports() {
+                    gapi.client.request({
+                                        path: '/v4/reports:batchGet',
+                                        root: 'https://analyticsreporting.googleapis.com/',
+                                        method: 'POST',
+                                        body: {
+                                        reportRequests: [
+                                                         {
+                                                         viewId: VIEW_ID,
+                                                         dateRanges: [
+                                                                      {
+                                                                      startDate: '7daysAgo',
+                                                                      endDate: 'today'
+                                                                      }
+                                                                      ],
+                                                         metrics: [
+                                                                   {
+                                                                   expression: 'ga:sessions'
+                                                                   }
+                                                                   ]
+                                                         }
+                                                         ]
+                                        }
+                                        }).then(displayResults, console.error.bind(console));
+                }
+
+            function displayResults(response) {
+                var formattedJson = JSON.stringify(response.result, null, 2);
+                document.getElementById('query-output').value = formattedJson;
+            }
+            </script>
+
+            <!-- Load the JavaScript API client and Sign-in library. -->
+            <script src="https://apis.google.com/js/client:platform.js"></script>
+            
+            
+            <span id="busuanzi_container_page_pv">READ：</span> <span id="busuanzi_container_page_pv">TIMES</span></div>
       </header>
       <p>Asymmetrical portland enamel pin af heirloom ramps authentic thundercats. Synth truffaut schlitz aesthetic, palo santo chambray flexitarian tumblr vexillologist pop-up gluten-free sustainable fixie shaman. Pug polaroid tumeric plaid sartorial fashion axe chia lyft glossier kitsch scenester pinterest kale chips. Blog etsy umami fashion axe shoreditch. Prism chambray heirloom, drinking vinegar portland paleo slow-carb. Waistcoat palo santo humblebrag biodiesel cornhole pinterest selvage neutra tacos semiotics edison bulb. Flexitarian brunch plaid activated charcoal sustainable selvage tbh prism pok pok bespoke cardigan readymade thundercats. Butcher fashion axe squid selvage master cleanse vinyl schlitz skateboard. Lomo shaman man bun keffiyeh asymmetrical listicle. Kickstarter trust fund fanny pack post-ironic wayfarers swag kitsch. Shaman pug kale chips meh squid.</p>
 

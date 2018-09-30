@@ -147,7 +147,52 @@
       <header class="header-page">
         <h1 class="page-title">The Best Organizer Software</h1>
         <div class="page-date"><span>2017, Sep 12&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <span id="busuanzi_container_page_pv">READ：The Best Organizer Software TIMES</span></div>
+<!--        <script async src="/ga.js"></script>-->
+<!--        <script src="//www.google-analytics.com/cx/api.js"></script>-->
+            <meta name="google-signin-client_id" content="345592105754-dspq32qjv8kvrhbk06cfdmdng3q8khni.apps.googleusercontent.com">
+            <meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly">
+            <script>
+                // Replace with your view ID.
+                var VIEW_ID = '182644519';
+                
+                // Query the API and print the results to the page.
+                function queryReports() {
+                    gapi.client.request({
+                                        path: '/v4/reports:batchGet',
+                                        root: 'https://analyticsreporting.googleapis.com/',
+                                        method: 'POST',
+                                        body: {
+                                        reportRequests: [
+                                                         {
+                                                         viewId: VIEW_ID,
+                                                         dateRanges: [
+                                                                      {
+                                                                      startDate: '7daysAgo',
+                                                                      endDate: 'today'
+                                                                      }
+                                                                      ],
+                                                         metrics: [
+                                                                   {
+                                                                   expression: 'ga:sessions'
+                                                                   }
+                                                                   ]
+                                                         }
+                                                         ]
+                                        }
+                                        }).then(displayResults, console.error.bind(console));
+                }
+
+            function displayResults(response) {
+                var formattedJson = JSON.stringify(response.result, null, 2);
+                document.getElementById('query-output').value = formattedJson;
+            }
+            </script>
+
+            <!-- Load the JavaScript API client and Sign-in library. -->
+            <script src="https://apis.google.com/js/client:platform.js"></script>
+            
+            
+            <span id="busuanzi_container_page_pv">READ：</span> <span id="busuanzi_container_page_pv">TIMES</span></div>
       </header>
       <p>Church-key blog messenger bag, selfies umami man braid mlkshk. Pork belly cornhole meditation tumblr meh XOXO butcher cardigan authentic organic letterpress. Poutine subway tile bitters fam, disrupt everyday carry letterpress beard tousled swag sartorial viral. Retro af 3 wolf moon heirloom, pork belly man bun DIY chillwave. Shoreditch ennui stumptown, photo booth tumeric PBR&amp;B direct trade coloring book marfa taxidermy. Gentrify brunch typewriter woke freegan. Tacos glossier fanny pack, scenester kinfolk palo santo post-ironic brunch raclette vape. Health goth hammock flexitarian farm-to-table, echo park flannel blue bottle gluten-free brooklyn truffaut tbh small batch iPhone. DIY PBR&amp;B four dollar toast tofu woke migas retro shoreditch disrupt yuccie YOLO vinyl man bun.
 <script type="math/tex">x \in \mathbf R^{3}</script></p>

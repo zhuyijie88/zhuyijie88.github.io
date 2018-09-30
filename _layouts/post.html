@@ -18,7 +18,52 @@ layout: main
       <header class="header-page">
         <h1 class="page-title">{{page.title}}</h1>
         <div class="page-date"><span>{{page.date | date: '%Y, %b %d'}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <span id="busuanzi_container_page_pv">READ：{{page.title}} TIMES</span></div>
+<!--        <script async src="/ga.js"></script>-->
+<!--        <script src="//www.google-analytics.com/cx/api.js"></script>-->
+            <meta name="google-signin-client_id" content="345592105754-dspq32qjv8kvrhbk06cfdmdng3q8khni.apps.googleusercontent.com">
+            <meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly">
+            <script>
+                // Replace with your view ID.
+                var VIEW_ID = '182644519';
+                
+                // Query the API and print the results to the page.
+                function queryReports() {
+                    gapi.client.request({
+                                        path: '/v4/reports:batchGet',
+                                        root: 'https://analyticsreporting.googleapis.com/',
+                                        method: 'POST',
+                                        body: {
+                                        reportRequests: [
+                                                         {
+                                                         viewId: VIEW_ID,
+                                                         dateRanges: [
+                                                                      {
+                                                                      startDate: '7daysAgo',
+                                                                      endDate: 'today'
+                                                                      }
+                                                                      ],
+                                                         metrics: [
+                                                                   {
+                                                                   expression: 'ga:sessions'
+                                                                   }
+                                                                   ]
+                                                         }
+                                                         ]
+                                        }
+                                        }).then(displayResults, console.error.bind(console));
+                }
+
+            function displayResults(response) {
+                var formattedJson = JSON.stringify(response.result, null, 2);
+                document.getElementById('query-output').value = formattedJson;
+            }
+            </script>
+
+            <!-- Load the JavaScript API client and Sign-in library. -->
+            <script src="https://apis.google.com/js/client:platform.js"></script>
+            
+            
+            <span id="busuanzi_container_page_pv">READ：{{formattedJson}}</span> <span id="busuanzi_container_page_pv">TIMES</span></div>
       </header>
       {{content | markdownify}}
       <div class="page-footer">
