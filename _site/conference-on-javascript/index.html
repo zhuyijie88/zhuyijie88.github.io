@@ -149,19 +149,19 @@
         <div class="page-date"><span>2017, Sep 10&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <!--        <script async src="/ga.js"></script>-->
 <!--        <script src="//www.google-analytics.com/cx/api.js"></script>-->
-        <head>
+
             <meta name="google-signin-client_id" content="345592105754-dspq32qjv8kvrhbk06cfdmdng3q8khni.apps.googleusercontent.com">
             <meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly">
                 <!-- The Sign-in button. This will run `queryReports()` on success. -->
-        </head>
-            <p class="g-signin2" data-onsuccess="queryReports"></p>
-            <!-- The API response will be printed here. -->
-            <textarea cols="5" rows="5" id="query-output"></textarea>
+        
+<!--            <p class="g-signin2" data-onsuccess="queryReports"></p>-->
+<!--            <button type="button" onclick="myFunction()">Try it</button>-->
             <script>
                 // Replace with your view ID.
                 var VIEW_ID = '182644519';
-                
+            
                 // Query the API and print the results to the page.
+                
                 function queryReports() {
                     gapi.client.request({
                                         path: '/v4/reports:batchGet',
@@ -185,21 +185,23 @@
                                                          }
                                                          ]
                                         }
-                                        }).then(displayResults, console.error.bind(console));
+                                        }).then(displayResults,error_displayResults); //console.error.bind(console));
                 }
-
-            function displayResults(response) {
-                var formattedJson = JSON.stringify(response.result, null, 2);
-                document.getElementById('query-output').value = formattedJson;
-            }
-            //queryReports()；
+            
+                function displayResults(response) {
+                    var formattedJson = JSON.stringify(response.result, null, 2);
+                    document.getElementById('times').innerHTML= formattedJson.reports[0].data.rows[0].metrics[0].values;
+                }
+                function error_displayResults() {
+                    //var formattedJson = JSON.stringify(response.result, null, 2);
+                    document.getElementById('times').innerHTML ="error"; // formattedJson.reports[0].data.rows[0].metrics[0].values;
+                }
+                window.onload = queryReports;
             </script>
-
             <!-- Load the JavaScript API client and Sign-in library. -->
             <script src="https://apis.google.com/js/client:platform.js"></script>
-            
-            
-            <span id="busuanzi_container_page_pv">READ：</span> <span id="busuanzi_container_page_pv">TIMES</span></div>
+
+            <span id="busuanzi_container_page_pv">READ：</span><span id="times"> </span> <span id="busuanzi_container_page_pv"> TIMES</span></div>
       </header>
       <p>Jean shorts organic cornhole, gochujang post-ironic chicharrones authentic flexitarian viral PBR&amp;B forage wolf. Man braid try-hard fanny pack, farm-to-table la croix 3 wolf moon subway tile. Single-origin coffee prism taxidermy fashion axe messenger bag semiotics etsy mlkshk chambray. Marfa lumbersexual meditation celiac. Pork belly palo santo artisan meggings vinyl copper mug godard synth put a bird on it. Cloud bread pop-up quinoa, raw denim meditation 8-bit slow-carb. Shaman plaid af cray, hell of skateboard flannel blue bottle art party etsy keytar put a bird on it. Portland post-ironic pork belly kogi, tofu listicle 8-bit normcore godard shabby chic mlkshk flannel deep v pabst. Pork belly kinfolk fingerstache lo-fi raclette. Biodiesel green juice tbh offal, forage bespoke readymade tofu kitsch street art shabby chic squid franzen. Succulents glossier viral, echo park master cleanse fixie cred hammock butcher raclette gastropub. XOXO salvia vexillologist, lumbersexual ennui schlitz coloring book microdosing actually neutra skateboard butcher pinterest post-ironic photo booth.</p>
 
