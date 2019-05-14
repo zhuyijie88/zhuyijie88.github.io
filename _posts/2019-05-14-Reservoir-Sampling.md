@@ -39,11 +39,6 @@ This general technique is called **reservoir sampling**, and it is useful in a n
 #### These Books Behind Me Don’t Just Make The Office Look Good
 
 Interesting algorithms aren’t just for the engineers building distributed file systems and search engines, they can also come in handy when you’re working on large-scale data analysis and statistical modeling problems. I’ll try to write some additional posts on algorithms that are interesting as well as useful for data scientists to learn, but in the meantime, it never hurts to [brush up on your Knuth](http://en.wikipedia.org/wiki/The_Art_of_Computer_Programming).
+
 ![]({{site.baseurl}}/assets/img/Knuth_books.jpg)
-
-
-
-- [Google Fonts](https://fonts.google.com/)
-
-<a href="http://typora.io" target="_blank"><font color='red'>主页</font></a>
 
