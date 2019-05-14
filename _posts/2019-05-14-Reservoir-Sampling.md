@@ -5,7 +5,7 @@ date: 2019-05-14 10:00:00 +0300
 description: machine learning is popular recent years `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 #img: yijie-zhu.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [CODE]
+tags: [Programming Algorithm]
 ---
 
 ### <font color='black'>Algorithms Every Data Scientist Should Know: Reservoir Sampling</font>
